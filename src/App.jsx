@@ -1,18 +1,29 @@
 const App = () => {
   const miObjeto = {
-    nombre: "Oscar",
-    segnombre: "Uriel",
-    apPaterno: "Alcocer",
-    apMaterno: "Delfin",
-    edad: 21,
+    nombre: "Bartholome",
+    apellido: "Simpson",
+    edad: 10,
+    direccion: {
+      calle: "Avenida Siempre Viva",
+      numExt: 742,
+      numInt: "",
+      ciudad: "Springfield",
+    },
   };
-  
-  const atributo = "apPaterno";
-
+  const { edad, nombre, apellido } = miObjeto;
+  const { calle, numExt, ciudad } = miObjeto.direccion;
+  const familia = ["Homer", "Margorie", "Lisa", "Maggie"] ;
+  const [padre, madre, hermana1, hermana2] = familia;
   return (
     <div className="App">
-      {/* EcmaScript 5*/}
-    <h1> {`MI nombre es ${miObjeto.nombre} ${miObjeto.segnombre} ${miObjeto.apPaterno} ${miObjeto.apMaterno} y tengo ${miObjeto.edad} años`}</h1>
+    <h3> {`Mi nombre es ${nombre} ${apellido}, tengo ${edad} años y vivo en ${calle} numero ${numExt}, ${ciudad}`}</h3>
+    <br />
+    {"Mi familia la conforman:"}
+    <ul>
+      <li>`Mi padre: ${padre}`</li>
+      <li>`Mi madre: ${madre}`</li>
+      <li>`Mis hermanas: ${hermana1} y ${hermana2}`</li>
+    </ul>
     </div>
   );
 };
